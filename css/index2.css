@@ -161,3 +161,18 @@ main{
     }
 
 }
+ 
+.ingreso{
+    justify-content: space-around;
+    display: flex;
+}  
+.ingreso-box{
+    margin: 1%;
+}
+.login{  
+    background:rgb(136, 136, 248);
+    padding: 1rem;
+    margin: 10px auto;
+    justify-content: space-around;
+    display: flex;
+}
