@@ -1,13 +1,24 @@
 <?php 
 include_once "../models/conexion.php";
 
-$username=$_POST['username'];
-$password=$_POST['password'];
+$nombre = $_POST['username'];
+$password = $_POST['password'];
 
-if ($username == nomUsuario){
+$_SESSION['username']=$nombre;
 
-    echo "Bienvenido"
+$sql = "SELECT * FROM usuario WHERE nomUsuario = '$nombre' AND passUsuario = '$password'";
+$result = mysqli_query($conexion,$sql);
 
-}
+$rows = mysqli_num_rows($result);
+
+if ($rows){
+    echo 'Inicio de sesión exitoso.';
+} else {
+    echo 'Error en la autentificación';
+} 
+
+mysqli_free_result($result);
+
+mysqli_close($conexion);
 
 ?>
